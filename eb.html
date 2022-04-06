@@ -1,0 +1,103 @@
+<html>
+<head>
+    <title>EB BILL</title>
+    <script>
+        function fun(){
+            var a=document.getElementById("d1").value;
+            var b=document.getElementById("d2").value;
+            var c=a-b;
+            var name=document.getElementById("d5");
+            var n=document.getElementById("d7");
+            var d;
+            document.getElementById("d4").innerHTML=name.value;
+            document.getElementById("d6").innerHTML=n.value;
+            if(c>=0 && c<=100)
+            {
+                d="no charge"
+            }
+            if(c>100 && c<=200)
+            {
+                d=c*1.5;
+            }
+            if(c>200 && c<=500)
+            {
+                d=c*2;
+            }
+            if(c>500)
+            {
+                d=c*3;
+            }
+            document.getElementById("d3").innerHTML=d;
+        }
+    </script>
+    <style>
+        #n,th,tr,.s{
+            border:1px solid black;
+        }
+        .m{
+            background-color: darkgrayw;
+            border:2px solid black;
+            width:1000px;
+            height:650px;
+        }
+        body{
+            background-color: coral;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div class="m" style="margin-top: 5cm;">
+        <table class="table" style="background-color: chocolate;width: 50%;">
+        <h2>TN-EB BILL</h2><br>
+    <form>
+        <tr>
+       <td style="padding:10px;"><label>customer name:</label></td>
+        <td><input type="text" id="d5"></td>
+        </tr>
+        <td style="padding:10px;"><label>customer id:</label></td>
+        <td><input type="text" id="d7"></td>
+        </tr>
+        <tr><td style="padding:10px;"><label>previous reading:</label></td>
+        <td><input type="text" id="d1"></td></tr>
+        <tr><td style="padding:10px;"><label>current reading:</label></td>
+        <td><input type="text" id="d2"></td></tr>
+       
+    </form>
+    
+</table><br>
+<table id="n">
+    <tr>
+    <th>range</th>
+    <th>amount</th>
+    </tr>
+    <tr>
+        <td class="s">0-100</td>
+        <td class="s">no charge</td> 
+    </tr>
+    <tr>
+        <td class="s">101-200</td>
+        <td class="s">1.5</td>
+    </tr>
+    <tr>
+        <td class="s">201-500</td>
+        <td class="s">2</td>
+    </tr>
+    <tr>
+        <td class="s">>500</td>
+        <td class="s">3</td>
+    </tr>
+</table><br>
+<div style="padding-left:50px;"><input type="button" value="click" onclick="fun()"></div>
+<div>
+        <p>customer name:</p>
+        <p id="d4"></p>
+        <p>customer id:</p>
+        <p id="d6"></p>
+        <p>Your current bill amount</p>
+        <p id="d3"></p>
+        </div>
+        </div>
+</center>
+</body>
+</html>
